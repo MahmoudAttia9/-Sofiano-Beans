@@ -1682,17 +1682,6 @@
                 `;
             };
             
-            Helper function to create apology message
-            const createApologyMessage = () => {
-                return `
-                    // <div class="apology-message">
-                    //     <h4>رسالة اعتذار</h4>
-                    //     <p>انا لست جيدا في قول اسف ولكني اعتذر منكم عن ارتفاع الأسعار فهذا الشيئ يفوق قدرتنا و نعتذر منكم مرة ثانية و نرجوا من الله العون و التوفيق</p>
-                    //     <p class="signature">مع تحيات بن سفيانو</p>
-                    // </div>
-                `;
-            };
-            
             // If "ALL" is selected, show all categories
             if (currentCategory === 'all') {
                 let allCategoriesHTML = '';
@@ -1719,7 +1708,7 @@
                         `;
                     });
                 
-                container.innerHTML = allCategoriesHTML + createApologyMessage();
+                container.innerHTML = allCategoriesHTML;
                 return;
             }
             
@@ -1748,8 +1737,6 @@
                                 ${itemsHTML}
                             </ul>
                         </div>
-                        
-                        ${createApologyMessage()}
                     </div>
                 `;
                 return;
@@ -1770,8 +1757,6 @@
                             ${itemsHTML}
                         </ul>
                     </div>
-                    
-                    ${createApologyMessage()}
                 </div>
             `;
             } catch(error) {
@@ -2283,4 +2268,3 @@
     </script>
 </body>
 </html>
-

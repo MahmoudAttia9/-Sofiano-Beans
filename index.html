@@ -582,14 +582,37 @@
         
         .menu-item {
             display: grid;
-            grid-template-columns: 1fr 100px 1fr;
+            grid-template-columns: 2fr repeat(5, 1fr);
             align-items: center;
-            padding: 16px 25px;
+            padding: 14px 20px;
             margin-bottom: 2px;
             border-radius: 0;
             transition: all 0.3s ease;
             border-bottom: 1.5px solid rgba(193, 154, 107, 0.25);
-            gap: 20px;
+            gap: 10px;
+        }
+        
+        /* اسم المنتج */
+        .item-name {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy-teal);
+            text-align: right;
+            line-height: 1.4;
+        }
+        
+        /* السعر في الخلايا */
+        .item-price {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy-teal);
+            text-align: center;
+        }
+        
+        .item-price.empty {
+            color: #ccc;
         }
         
         .menu-item:nth-child(even) {
@@ -669,28 +692,35 @@
             font-size: 1.6rem;
         }
         
-        /* Header للأعمدة */
+        /* Header للأعمدة - 6 أعمدة */
         .menu-header {
             display: grid;
-            grid-template-columns: 1fr 100px 1fr;
-            padding: 15px 25px;
+            grid-template-columns: 2fr repeat(5, 1fr);
+            padding: 15px 20px;
             background: linear-gradient(135deg, var(--navy-teal), var(--dark-teal));
             color: var(--white);
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             border-radius: 12px 12px 0 0;
-            gap: 20px;
+            gap: 10px;
             margin-bottom: 0;
+            text-align: center;
         }
         
-        .menu-header-ar {
+        .menu-header-name {
             text-align: right;
+            font-size: 0.95rem;
         }
         
         .menu-header-price {
             text-align: center;
+            font-size: 0.8rem;
+        }
+        
+        .menu-header-ar {
+            text-align: right;
         }
         
         .menu-header-en {
@@ -721,6 +751,37 @@
             color: var(--navy-teal);
             font-weight: 700;
             margin-left: 10px;
+        }
+        
+        /* رسالة الاعتذار */
+        .apology-message {
+            margin-top: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(27, 77, 77, 0.05), rgba(201, 168, 104, 0.1));
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid rgba(201, 168, 104, 0.3);
+        }
+        
+        .apology-message h4 {
+            color: var(--gold);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .apology-message p {
+            color: var(--navy-teal);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+        
+        .apology-message .signature {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 15px;
         }
         
         @keyframes slideInRight {
@@ -945,16 +1006,28 @@
             }
             
             .menu-header {
-                grid-template-columns: 1fr 70px 70px 1fr;
-                padding: 12px 15px;
-                font-size: 0.85rem;
-                gap: 10px;
+                grid-template-columns: 2fr repeat(5, 1fr);
+                padding: 12px 10px;
+                font-size: 0.65rem;
+                gap: 5px;
+            }
+            
+            .menu-header-name {
+                font-size: 0.75rem;
             }
             
             .menu-item {
-                grid-template-columns: 1fr 70px 70px 1fr;
-                padding: 14px 15px;
-                gap: 10px;
+                grid-template-columns: 2fr repeat(5, 1fr);
+                padding: 12px 10px;
+                gap: 5px;
+            }
+            
+            .item-name {
+                font-size: 0.85rem;
+            }
+            
+            .item-price {
+                font-size: 0.8rem;
             }
             
             .item-name-ar {
@@ -972,6 +1045,21 @@
             
             .item-description {
                 font-size: 0.75rem;
+            }
+            
+            /* رسالة الاعتذار على الموبايل */
+            .apology-message {
+                padding: 20px 15px;
+                margin-top: 20px;
+            }
+            
+            .apology-message h4 {
+                font-size: 1.1rem;
+            }
+            
+            .apology-message p {
+                font-size: 0.85rem;
+                line-height: 1.6;
             }
             
             .menu-table-container {
@@ -1010,6 +1098,36 @@
             .category-btn {
                 padding: 8px 15px;
                 font-size: 0.85rem;
+            }
+            
+            /* تصغير الجدول للشاشات الصغيرة */
+            .menu-header {
+                grid-template-columns: 1.5fr repeat(5, 1fr);
+                padding: 10px 8px;
+                font-size: 0.55rem;
+                gap: 3px;
+            }
+            
+            .menu-header-name {
+                font-size: 0.65rem;
+            }
+            
+            .menu-item {
+                grid-template-columns: 1.5fr repeat(5, 1fr);
+                padding: 10px 8px;
+                gap: 3px;
+            }
+            
+            .item-name {
+                font-size: 0.75rem;
+            }
+            
+            .item-price {
+                font-size: 0.7rem;
+            }
+            
+            .category-title {
+                font-size: 1.5rem;
             }
         }
         
@@ -1209,32 +1327,80 @@
         }, menuCache.TTL);
         
         // ========================================
-        // البيانات - من الصورة بالضبط
+        // البيانات - من الصور الـ 3
         // ========================================
         const menuData = {
             categories: [
-                { id: 'coffee-beans', name: 'Sofiano Beans', name_ar: 'بُن سوفيانو', icon: 'fa-seedling' }
+                { id: 'all', name: 'الكل', name_ar: 'جميع القوائم', icon: 'fa-list' },
+                { id: 'bn-sada', name: 'بن سادة', name_ar: 'قائمة أسعار بن سادة', icon: 'fa-seedling' },
+                { id: 'bn-mahwag', name: 'بن محوج', name_ar: 'قائمة أسعار بن محوج', icon: 'fa-mortar-pestle' },
+                { id: 'sada', name: 'سادة', name_ar: 'قائمة أسعار سادة', icon: 'fa-mug-hot' }
             ],
+            // أعمدة الأسعار (بدون 50جم)
+            priceColumns: ['100جم', '125جم', '250جم', '500جم', 'كيلو'],
             items: {
-                'coffee-beans': [
-                    { name_en: 'Silver', name_ar: 'سيلفر', price_s: 430, price_d: null, description: 'فاتح - وسط' },
-                    { name_en: 'Classic', name_ar: 'كلاسيك', price_s: 550, price_d: null, description: 'فاتح - وسط' },
-                    { name_en: 'Momtaz', name_ar: 'ممتاز', price_s: 590, price_d: null, description: 'فاتح - وسط' },
-                    { name_en: 'Indonesian', name_ar: 'اندونيسي', price_s: 560, price_d: null },
-                    { name_en: 'Vietnamese', name_ar: 'فيتنامي', price_s: 570, price_d: null },
-                    { name_en: 'Habashi', name_ar: 'حبشي', price_s: 600, price_d: null },
-                    { name_en: 'Super', name_ar: 'سوبر', price_s: 630, price_d: null, description: 'فاتح - وسط - غامق' },
-                    { name_en: 'Brazilian', name_ar: 'برازيلي', price_s: 630, price_d: null, description: 'فاتح - وسط - غامق' },
-                    { name_en: 'Indian Robusta', name_ar: 'هندي روبستا', price_s: 650, price_d: null },
-                    { name_en: 'Sofiano', name_ar: 'سفيانو', price_s: 660, price_d: null, description: 'فاتح - وسط' },
-                    { name_en: 'Special', name_ar: 'سبيشيال', price_s: 690, price_d: null, description: 'فاتح - وسط' },
-                    { name_en: 'Indian Arabica', name_ar: 'هندي اربيكا', price_s: 750, price_d: null },
-                    { name_en: 'Ameed', name_ar: 'عميد', price_s: 800, price_d: null, description: 'فاتح - وسط' },
-                    { name_en: 'Espresso', name_ar: 'سبريسو', price_s: 850, price_d: null, description: 'وسط' },
-                    { name_en: 'Colombian', name_ar: 'كلومبي', price_s: 960, price_d: null, description: 'فاتح - وسط - غامق' },
-                    { name_en: 'Black Pool', name_ar: 'بلاك بول', price_s: 1200, price_d: null },
-                    { name_en: 'Yemeni', name_ar: 'يمني', price_s: 1300, price_d: null },
-                    { name_en: 'Flavor Coffee', name_ar: 'قهوه فليفر', price_s: null, price_d: null, description: 'فرنساوي - بندق - شيكولاته... الخ' }
+                // ========================================
+                // قائمة أسعار بن سادة (سفيانو) - الصورة الأولى
+                // ========================================
+                'bn-sada': [
+                    { name: 'كولومبي غامق', p100: 110, p125: 138, p250: 275, p500: 550, p1000: 1100 },
+                    { name: 'كلاسيك سفيانو', p100: 55, p125: 69, p250: 138, p500: 275, p1000: 550 },
+                    { name: 'سوبر غامق', p100: 70, p125: 88, p250: 175, p500: 350, p1000: 700 },
+                    { name: 'سوبر', p100: 63, p125: 79, p250: 158, p500: 315, p1000: 630 },
+                    { name: 'ممتاز', p100: 59, p125: 74, p250: 148, p500: 295, p1000: 590 },
+                    { name: 'جولد سفيانو', p100: 50, p125: 63, p250: 125, p500: 250, p1000: 500 },
+                    { name: 'سفيانو', p100: 66, p125: 83, p250: 165, p500: 330, p1000: 660 },
+                    { name: 'حبشي', p100: 60, p125: 75, p250: 150, p500: 300, p1000: 600 },
+                    { name: 'هندي', p100: 65, p125: 83, p250: 163, p500: 325, p1000: 650 },
+                    { name: 'برازيلي غامق', p100: 65, p125: 83, p250: 163, p500: 325, p1000: 650 },
+                    { name: 'برازيلي', p100: 63, p125: 79, p250: 158, p500: 315, p1000: 630 },
+                    { name: 'سبيشيال', p100: 69, p125: 87, p250: 173, p500: 345, p1000: 690 },
+                    { name: 'عميد', p100: 80, p125: 100, p250: 200, p500: 400, p1000: 800 },
+                    { name: 'سبرسو', p100: 85, p125: 107, p250: 213, p500: 425, p1000: 850 },
+                    { name: 'كولومبي', p100: 96, p125: 120, p250: 240, p500: 480, p1000: 960 },
+                    { name: 'بن فرنساوي', p100: 70, p125: 88, p250: 175, p500: 350, p1000: 700 },
+                    { name: 'بن بندق', p100: 75, p125: 94, p250: 188, p500: 375, p1000: 750 },
+                    { name: 'بن اخضر', p100: 58, p125: 73, p250: 145, p500: 290, p1000: 580 },
+                    { name: 'نسكافيه جولد', p100: 150, p125: 188, p250: 375, p500: 750, p1000: 1500 }
+                ],
+                // ========================================
+                // قائمة أسعار بن محوج (سفيانو) - الصورة الثانية
+                // ========================================
+                'bn-mahwag': [
+                    { name: 'بن تنزاني', p100: null, p125: null, p250: null, p500: null, p1000: null },
+                    { name: 'كلاسيك سفيانو', p100: 70, p125: 88, p250: 175, p500: 350, p1000: 700 },
+                    { name: 'سوبر غامق', p100: 75, p125: 94, p250: 188, p500: 375, p1000: 750 },
+                    { name: 'سوبر', p100: 78, p125: 98, p250: 195, p500: 390, p1000: 780 },
+                    { name: 'ممتاز', p100: 74, p125: 93, p250: 185, p500: 370, p1000: 740 },
+                    { name: 'جولد سفيانو', p100: 81, p125: 103, p250: 203, p500: 405, p1000: 810 },
+                    { name: 'سفيانو', p100: 81, p125: 103, p250: 203, p500: 405, p1000: 810 },
+                    { name: 'حبشي', p100: 75, p125: 94, p250: 188, p500: 375, p1000: 750 },
+                    { name: 'هندي', p100: 80, p125: 100, p250: 200, p500: 400, p1000: 800 },
+                    { name: 'برازيلي غامق', p100: 83, p125: 104, p250: 208, p500: 415, p1000: 830 },
+                    { name: 'برازيلي', p100: 78, p125: 98, p250: 195, p500: 390, p1000: 780 },
+                    { name: 'سبيشيال', p100: 81, p125: 105, p250: 210, p500: 420, p1000: 840 },
+                    { name: 'عميد', p100: 95, p125: 119, p250: 238, p500: 475, p1000: 950 },
+                    { name: 'كولومبي', p100: 110, p125: 139, p250: 278, p500: 555, p1000: 1110 },
+                    { name: 'عميد غامق', p100: 100, p125: 125, p250: 250, p500: 500, p1000: 1000 },
+                    { name: 'كولومبي غامق', p100: 160, p125: 145, p250: 290, p500: 580, p1000: 1160 }
+                ],
+                // ========================================
+                // قائمة أسعار سادة (سفيانو) - الصورة الثالثة
+                // ========================================
+                'sada': [
+                    { name: 'كابتشينو سادة', p100: 53, p125: 67, p250: 133, p500: 265, p1000: 530 },
+                    { name: 'كوفي ميكس', p100: 50, p125: 63, p250: 125, p500: 250, p1000: 500 },
+                    { name: 'بن شيكولاتة', p100: 60, p125: 75, p250: 150, p500: 300, p1000: 600 },
+                    { name: 'سحلب', p100: 18, p125: 23, p250: 45, p500: 90, p1000: 180 },
+                    { name: 'كاكاو', p100: 25, p125: 33, p250: 63, p500: 125, p1000: 250 },
+                    { name: 'هوت شوكليت', p100: 35, p125: 44, p250: 88, p500: 175, p1000: 350 },
+                    { name: 'نسكافيه كلاسيك', p100: 120, p125: 150, p250: 300, p500: 600, p1000: 1200 },
+                    { name: 'كابتشينو بندف', p100: 60, p125: 75, p250: 150, p500: 300, p1000: 600 },
+                    { name: 'بن اندونيسي', p100: 34, p125: 67, p250: 133, p500: 265, p1000: 530 },
+                    { name: 'بن فيتنامي', p100: 55, p125: 69, p250: 138, p500: 275, p1000: 550 },
+                    { name: 'هند أربيكا', p100: 60, p125: 75, p250: 150, p500: 300, p1000: 600 },
+                    { name: 'حب هال حصا', p100: 250, p125: 313, p250: 625, p500: 1250, p1000: 2500 },
+                    { name: 'حب هال مطحون', p100: 255, p125: 319, p250: 638, p500: 1275, p1000: 2550 }
                 ]
             }
         };
@@ -1242,7 +1408,7 @@
         // ========================================
         // STATE MANAGEMENT
         // ========================================
-        let currentCategory = 'all'; // القسم النشط حالياً
+        let currentCategory = 'all'; // القسم النشط حالياً - default to الكل
         
         // ========================================
         // INITIALIZE APP - OPTIMIZED
@@ -1474,7 +1640,7 @@
         }
         
         // ========================================
-        // RENDER MENU CONTENT - OPTIMIZED
+        // RENDER MENU CONTENT - OPTIMIZED for 6 columns (without 50gm)
         // ========================================
         function renderMenuContent() {
             try {
@@ -1485,145 +1651,129 @@
                     return;
                 }
             
-            // Helper function to create DOM element (better performance than innerHTML)
-            const createItemElement = (item) => {
-                const li = document.createElement('li');
-                li.className = 'menu-item';
-                
-                const price = item.price_s ? item.price_s : '-';
-                const priceClass = item.price_s ? 'price-s' : 'price-s price-na';
-                
-                // Use template literal for better performance
-                li.innerHTML = `
-                    <div class="item-names">
-                        <div class="item-name-ar">${item.name_ar}</div>
-                        ${item.description ? `<div class="item-description">${item.description}</div>` : ''}
+            // Helper function to create table header
+            const createTableHeader = () => {
+                return `
+                    <div class="menu-header">
+                        <div class="menu-header-name">النوع</div>
+                        <div class="menu-header-price">100جم</div>
+                        <div class="menu-header-price">125جم</div>
+                        <div class="menu-header-price">250جم</div>
+                        <div class="menu-header-price">500جم</div>
+                        <div class="menu-header-price">كيلو</div>
                     </div>
-                    <div class="${priceClass}">${price}</div>
-                    <div class="item-name-en">${item.name_en}</div>
                 `;
-                
-                return li;
             };
             
-            // If "ALL" is selected, show all categories - OPTIMIZED with Fragment
+            // Helper function to create item row
+            const createItemRow = (item) => {
+                const formatPrice = (price) => price !== null ? price : '-';
+                const priceClass = (price) => price !== null ? 'item-price' : 'item-price empty';
+                
+                return `
+                    <li class="menu-item">
+                        <div class="item-name">${item.name}</div>
+                        <div class="${priceClass(item.p100)}">${formatPrice(item.p100)}</div>
+                        <div class="${priceClass(item.p125)}">${formatPrice(item.p125)}</div>
+                        <div class="${priceClass(item.p250)}">${formatPrice(item.p250)}</div>
+                        <div class="${priceClass(item.p500)}">${formatPrice(item.p500)}</div>
+                        <div class="${priceClass(item.p1000)}">${formatPrice(item.p1000)}</div>
+                    </li>
+                `;
+            };
+            
+            // Helper function to create apology message
+            const createApologyMessage = () => {
+                return `
+                    <div class="apology-message">
+                        <h4>رسالة اعتذار</h4>
+                        <p>انا لست جيدا في قول اسف ولكني اعتذر منكم عن ارتفاع الأسعار فهذا الشيئ يفوق قدرتنا و نعتذر منكم مرة ثانية و نرجوا من الله العون و التوفيق</p>
+                        <p class="signature">مع تحيات بن سفيانو</p>
+                    </div>
+                `;
+            };
+            
+            // If "ALL" is selected, show all categories
             if (currentCategory === 'all') {
-                // Use DocumentFragment for better performance
-                const fragment = document.createDocumentFragment();
+                let allCategoriesHTML = '';
                 
                 menuData.categories
                     .filter(cat => cat.id !== 'all')
                     .forEach(category => {
                         const items = menuData.items[category.id];
-                        const showFlavorsNote = category.id === 'special-coffee';
+                        const itemsHTML = items.map(item => createItemRow(item)).join('');
                         
-                        const categoryDiv = document.createElement('div');
-                        categoryDiv.className = 'menu-category active';
-                        categoryDiv.style.marginBottom = '50px';
-                        
-                        // Build HTML string for this category
-                        const itemsHTML = items.map(item => {
-                            const price = item.price_s ? item.price_s : '-';
-                            const priceClass = item.price_s ? 'price-s' : 'price-s price-na';
-                            
-                            return `
-                                <li class="menu-item">
-                                    <div class="item-names">
-                                        <div class="item-name-ar">${item.name_ar}</div>
-                                        ${item.description ? `<div class="item-description">${item.description}</div>` : ''}
-                                    </div>
-                                    <div class="${priceClass}">${price}</div>
-                                    <div class="item-name-en">${item.name_en}</div>
-                                </li>
-                            `;
-                        }).join('');
-                        
-                        categoryDiv.innerHTML = `
-                            <h2 class="category-title">${category.name}</h2>
-                            <div class="menu-table-container">
-                                <div class="menu-header">
-                                    <div class="menu-header-ar">الاسم بالعربي</div>
-                                    <div class="menu-header-price">السعر</div>
-                                    <div class="menu-header-en">Name</div>
+                        allCategoriesHTML += `
+                            <div class="menu-category active" style="margin-bottom: 50px;">
+                                <h2 class="category-title">
+                                    ${category.name_ar} - (سفيانو)
+                                </h2>
+                                
+                                <div class="menu-table-container">
+                                    ${createTableHeader()}
+                                    <ul class="menu-items-list">
+                                        ${itemsHTML}
+                                    </ul>
                                 </div>
-                                <ul class="menu-items-list">${itemsHTML}</ul>
-                                ${showFlavorsNote ? `
-                                    <div class="flavors-note">
-                                        <i class="fas fa-info-circle"></i>
-                                        <strong>النكهات المتوفرة:</strong>
-                                        فانيلا – بندق – فستق – شوكولاتة – كراميل – مانجو – توت – تفاح – فراولة
-                                    </div>
-                                ` : ''}
                             </div>
                         `;
-                        
-                        fragment.appendChild(categoryDiv);
                     });
                 
-                // Single DOM update
-                container.innerHTML = '';
-                container.appendChild(fragment);
-            } else {
-                // Show single category
-                const category = menuData.categories.find(cat => cat.id === currentCategory);
-                const items = menuData.items[currentCategory];
+                container.innerHTML = allCategoriesHTML + createApologyMessage();
+                return;
+            }
+            
+            // Show single category
+            const category = menuData.categories.find(cat => cat.id === currentCategory);
+            const items = menuData.items[currentCategory];
+            
+            // Check if category and items exist
+            if (!category || !items) {
+                // Default to first category
+                const firstCategory = menuData.categories[1]; // Skip 'all'
+                currentCategory = firstCategory.id;
+                const firstItems = menuData.items[currentCategory];
                 
-                // Check if category and items exist
-                if (!category || !items) {
-                    container.innerHTML = `
-                        <div style="text-align: center; padding: 60px 20px;">
-                            <p style="color: var(--text-dark); opacity: 0.7;">لا توجد عناصر في هذه الفئة</p>
-                        </div>
-                    `;
-                    return;
-                }
-                
-                const showFlavorsNote = currentCategory === 'special-coffee';
-                
-                // Build items HTML
-                const itemsHTML = items.map(item => {
-                    const price = item.price_s ? item.price_s : '-';
-                    const priceClass = item.price_s ? 'price-s' : 'price-s price-na';
-                    
-                    return `
-                        <li class="menu-item">
-                            <div class="item-names">
-                                <div class="item-name-ar">${item.name_ar}</div>
-                                ${item.description ? `<div class="item-description">${item.description}</div>` : ''}
-                            </div>
-                            <div class="${priceClass}">${price}</div>
-                            <div class="item-name-en">${item.name_en}</div>
-                        </li>
-                    `;
-                }).join('');
+                const itemsHTML = firstItems.map(item => createItemRow(item)).join('');
                 
                 container.innerHTML = `
                     <div class="menu-category active">
                         <h2 class="category-title">
-                            ${category.name}
+                            ${firstCategory.name_ar} - (سفيانو)
                         </h2>
                         
                         <div class="menu-table-container">
-                            <div class="menu-header">
-                                <div class="menu-header-ar">الاسم بالعربي</div>
-                                <div class="menu-header-price">السعر</div>
-                                <div class="menu-header-en">Name</div>
-                            </div>
+                            ${createTableHeader()}
                             <ul class="menu-items-list">
                                 ${itemsHTML}
                             </ul>
-                            
-                            ${showFlavorsNote ? `
-                                <div class="flavors-note">
-                                    <i class="fas fa-info-circle"></i>
-                                    <strong>النكهات المتوفرة:</strong>
-                                    فانيلا – بندق – فستق – شوكولاتة – كراميل – مانجو – توت – تفاح – فراولة
-                                </div>
-                            ` : ''}
                         </div>
+                        
+                        ${createApologyMessage()}
                     </div>
                 `;
+                return;
             }
+            
+            // Build items HTML
+            const itemsHTML = items.map(item => createItemRow(item)).join('');
+            
+            container.innerHTML = `
+                <div class="menu-category active">
+                    <h2 class="category-title">
+                        ${category.name_ar} - (سفيانو)
+                    </h2>
+                    
+                    <div class="menu-table-container">
+                        ${createTableHeader()}
+                        <ul class="menu-items-list">
+                            ${itemsHTML}
+                        </ul>
+                    </div>
+                    
+                    ${createApologyMessage()}
+                </div>
+            `;
             } catch(error) {
                 console.error('❌ Error rendering menu:', error);
                 const container = document.getElementById('menuContent');
